@@ -31,5 +31,5 @@ good enough to give it a try. Enjoy.
 
 Deployment as a docker image is done like this:
 
-    docker build -t plantuml-service:latest .
+    docker build -t plantuml-service:rev-`git rev-parse --short HEAD` -t plantuml-service:latest .
     docker run -it -p 8080:8080 --rm plantuml-service:latest

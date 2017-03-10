@@ -2,6 +2,10 @@ FROM webratio/java:7
 
 # Installs Ant
 ENV ANT_VERSION 1.9.4
+
+RUN apt-get -y update && apt-get install -y \
+	graphviz
+
 RUN cd && \
     wget -q http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz && \
     tar -xzf apache-ant-${ANT_VERSION}-bin.tar.gz && \
