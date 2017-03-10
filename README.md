@@ -4,27 +4,40 @@ Use something like the following as embedded UML diagram in your documentation
 in Github flavoured Markdown:
 
     ![MyModel](http://127.0.0.1:8080/plantuml/png?source=
-    Frank -> Ben : Hallo
-    Ben -> Carla : Hi
-    Carla -> Frank : Ola!
+    Hans -> John : Hallo
+    John -> Carla : Hi
+    Carla -> Hans : Ola!
     )
 
-You can add the typical `@startuml` and `@enduml` but it's not needed. Sample:
+You can add the typical `@startuml` and `@enduml` but it's not needed as that's
+the default. Sample:
 
     ![MyModel](http://127.0.0.1:8080/plantuml/png?source=
     @startuml
-    Frank -> Ben : Hallo
-    Ben -> Carla : Hi
-    Carla -> Frank : Ola!
+    Hans -> John : Hallo
+    John -> Carla : Hi
+    Carla -> Hans : Ola!
     @enduml
     )
 
 
 Use `svg` or `atxt` as alternatives to get graphs as SVG or as ASCII.
 
-Learn more about fantastic PlantUML here: http://plantuml.com
+**Don't put empty lines** inside the body as that closes the Markdown image tag
+and be sure to **escape round brackets** for the same reason. Sample:
 
-We could add some caching and there could be some more documentation but its
+    ![MyModel](http://127.0.0.1:8080/plantuml/png?source=
+    Hans -> John : "Hallo" \(Deutsch\)
+    John -> Carla : "Hi" \(English\)
+    Carla -> Hans : "Ola!" \(Portuguese\)
+    )
+
+
+Learn **more about fantastic PlantUML** at http://plantuml.com and don't be
+fooled by the old-school website: PlantUML is rock and roll!
+
+We could add some caching, there could be some more documentation and we
+definitely have to reduce the docker image size, but the current version is
 good enough to give it a try. Enjoy.
 
 ## Docker
